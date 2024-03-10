@@ -1,0 +1,13 @@
+<link rel="icon" href="/favicon.ico" />
+{{ $sideLengths := slice 16 32 192 }}
+{{ range $sideLength := $sideLengths }}
+  {{ $rel := cond (eq $sideLength 192) "apple-touch-icon" "icon" }}
+  {{ $sizes := printf "%dx%d" $sideLength $sideLength }}
+  {{ $href := printf "/images/favicon-%s.png" $sizes }}
+  <link
+    rel="{{ $rel }}"
+    type="image/png"
+    sizes="{{ $sizes }}"
+    href="{{ $href }}"
+  />
+{{- end }}
