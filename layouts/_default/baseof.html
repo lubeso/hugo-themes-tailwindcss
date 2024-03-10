@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html
-  lang="{{ or site.Language.LanguageCode site.Language.Lang }}"
-  dir="{{ or site.Language.LanguageDirection `ltr` }}"
+  lang="{{ or .Params.LanguageCode .Language site.Language.LanguageCode site.Language.Lang }}"
+  dir="{{ or .Params.LanguageDirectrion site.Language.LanguageDirection `ltr` }}"
   class="m-0 w-screen h-screen flex flex-col flex-nowrap items-center justify-center"
 >
 <head>
