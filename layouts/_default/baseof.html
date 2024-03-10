@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html
+  lang="{{ or site.Language.LanguageCode site.Language.Lang }}"
+  dir="{{ or site.Language.LanguageDirection `ltr` }}"
+  class="m-0 w-screen h-screen flex flex-col flex-nowrap items-center justify-center"
+>
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body class="mx-auto max-w-xl min-h-full p-6 flex flex-col items-stretch justify-start space-y-4 overflow-scroll">
+  <header class="w-full h-fit p-4 flex flex-col justify-center items-center space-y-4">
+    {{ partial "header.html" . }}
+  </header>
+  <main class="contents">
+    <article class="p-4 flex-1 flex flex-col justify-start items-stretch space-y-4 text-justify">
+      {{ block "main" . }}{{ end }}
+    </article>
+  </main>
+  <footer class="w-full h-fit p-4 flex justify-center items-center text-xs">
+    {{ partial "footer.html" . }}
+  </footer>
+</body>
+</html>
